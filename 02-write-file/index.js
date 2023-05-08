@@ -16,9 +16,10 @@ function fillFile() {
   console.log('введите что-нибудь')
   rl.on('line', (input) => {
     if (input === 'exit') {
-      console.log('сохранено в text.txt')
       rl.close();
-    } else writeStream.write(`${input}\n`);
+    } else fs.appendFile(filePath, input + '\n', (err) => {
+      if (err) throw new err
+    });
   })
   rl.on('SIGINT', () => {
     console.log('сохранено в text.txt')
