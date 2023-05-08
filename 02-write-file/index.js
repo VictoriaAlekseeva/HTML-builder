@@ -16,10 +16,12 @@ function fillFile() {
   console.log('введите что-нибудь')
   rl.on('line', (input) => {
     if (input === 'exit') {
+      console.log('сохранено в text.txt')
       rl.close();
     } else writeStream.write(`${input}\n`);
   })
   rl.on('SIGINT', () => {
+    console.log('сохранено в text.txt')
     rl.close()
   });
 }
