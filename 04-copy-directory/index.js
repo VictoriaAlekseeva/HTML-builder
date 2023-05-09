@@ -1,7 +1,5 @@
-const fs = require('fs');
-const fsPromises = require('fs').promises;
 const path = require('path');
-const {readdir, mkdir, copyFile, rm} = require('fs/promises')
+const {readdir, mkdir, copyFile, rm} = require('fs/promises');
 
 const dirPath = path.join(__dirname, 'files');
 const newDir = path.join(__dirname, 'files-copy');
@@ -19,8 +17,8 @@ async function createDir(dirPath, newDir) {
       if (file.isDirectory()) {
         await createDir(sourceDir, destinationDir);
       } else {
-      await copyFile(sourceDir, destinationDir);
-    }
+        await copyFile(sourceDir, destinationDir);
+      }
     }
 
   } catch (err) {
