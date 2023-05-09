@@ -10,7 +10,7 @@ const newDir = path.join(__dirname, 'files-copy');
 
 async function createDir(dirPath, newDir) {
   try {
-    await rm(newDir, { recursive: true });
+    await rm(newDir, { recursive: true, force: true });
     await mkdir(newDir, { recursive: true });
     const files = await readdir(dirPath, {withFileTypes: true});
     for (const file of files) {
