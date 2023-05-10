@@ -2,7 +2,7 @@ const { stat } = require('fs');
 const path = require('path');
 const { readdir } = require('fs/promises');
 
-const dirPath = path.join(__dirname, '/secret-folder');
+const dirPath = path.join(__dirname, 'secret-folder');
 
 async function readDir() {
   try {
